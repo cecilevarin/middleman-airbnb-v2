@@ -28,34 +28,7 @@ title: Middleman exo - Airbnb v2
       <div class="cards">
       <h3 class="text-center">Recent flats</h3>
         <div class="row">
-          <% flats = [
-              {
-                name: "Seb's",
-                nickname: "ssaunier",
-                city: "PARIS",
-                country: "FRANCE",
-                tagline: "Charming room in Montmartre",
-                stars: 4,
-               },
-              {
-                name: "Boris'",
-                nickname: "papillard",
-                city: "TOKYO",
-                country: "JAPON",
-                tagline: "Small flat in Tokyo",
-                stars: 3
-                },
-              {
-                name: "Romain's",
-                nickname: "monsieurpaillard",
-                city: "LONDON",
-                country: "UK",
-                tagline: "Nice flat in Picadilly",
-                stars: 5
-              }
-          ] %>
-
-          <% flats.each do |flat| %>
+          <% data.flats.each do |flat| %>
             <div class="col-xs-12 col-sm-4">
               <div class="card">
                   <div class="card-body" style="background-image:  linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat[:city].downcase%>')">
