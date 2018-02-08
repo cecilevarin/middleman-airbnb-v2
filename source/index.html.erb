@@ -1,15 +1,79 @@
 ---
-title: Le Wagon - Middleman
+title: Middleman exo - Airbnb v2
 ---
 
-<div id="home">
-  <div class="home-content">
-    <%= image_tag "logo.png", width: "200" %>
-    <p>
-      Middleman is now running!
-    </p>
-    <p class="about">
-      <%= link_to "More about this template", "about.html" %>
-    </p>
+  <div class="home">
+    <!-- navbar is a component added in layout -->
+
+    <!-- banner -->
+    <div class="banner" style="background: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://kitt.lewagon.com/placeholder/cities/paris');">
+      <div class="banner-content">
+        <h1>WELCOME HOME</h1>
+        <p>Rent unique places to stay from local hosts in 190+ countries.</p>
+        <form action="#" class="form-inline">
+          <input type="text" placeholder="Where?" class="form-control input-lg">
+          <input type="text" placeholder="When?" class="form-control input-lg">
+          <select name = "" id="mon-select" class= "form-control input-lg">
+            <option value = "">1 guest</option>
+            <option value = "">2 guests</option>
+            <option value="">3 guests</option>
+          </select>
+          <input type="submit" value="Search" class="btn btn-primary btn-lg">
+        </form>
+      </div>
+    </div>
+
+    <!-- cards -->
+    <div class="container">
+      <div class="cards">
+      <h3 class="text-center">Recent flats</h3>
+        <div class="row">
+          <% flats = [
+              {
+                name: "Seb's",
+                nickname: "ssaunier",
+                city: "PARIS",
+                country: "FRANCE",
+                tagline: "Charming room in Montmartre"
+               },
+              {
+                name: "Boris'",
+                nickname: "papillard",
+                city: "TOKYO",
+                country: "JAPON",
+                tagline: "Small flat in Tokyo"
+                },
+              {
+                name: "Romain's",
+                nickname: "monsieurpaillard",
+                city: "LONDON",
+                country: "UK",
+                tagline: "Nice flat in Picadilly"
+              }
+          ] %>
+
+          <% flats.each do |flat| %>
+            <div class="col-xs-12 col-sm-4">
+              <div class="card">
+                <a href="#">
+                  <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3)), url('https://kitt.lewagon.com/placeholder/cities/<%= flat[:city].downcase%>')">
+                    <div class="card-category"><%= flat[:city].upcase %>, <%= flat[:country].upcase %></div>
+                    <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{flat[:nickname]}", class: "card-avatar" %>
+                    <div class="card-desc">
+                      <h4><%= flat[:name] %> home</h4>
+                      <p><%= flat[:tagline] %></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- footer is a component added in layout -->
   </div>
-</div>
+

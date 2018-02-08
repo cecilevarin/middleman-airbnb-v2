@@ -1,0 +1,52 @@
+.cards {
+  margin-top: 50px;
+}
+
+.card {
+/*  flex : 1 0 0;
+*/  margin: 40px 15px;
+  box-shadow: 2px 2px 10px lightgrey;
+  transition: 0.3s ;
+  opacity: 0.9;
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.card-body {
+  position: relative;
+  height: 250px;
+  background-size: cover;
+/*  background-position: center;
+*/  color: white;
+  border-radius: 3px;
+}
+
+.card-category {
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  left: 10px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.card-desc {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.card-desc h4 {
+  margin: 10px 0px;
+  color: white;
+}
+
+.card-desc p {
+  font-size: 1em;
+  opacity: 0.8;
+  color: white;
+  font-weight: lighter;
+}
+
