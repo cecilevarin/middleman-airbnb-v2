@@ -34,37 +34,49 @@ title: Middleman exo - Airbnb v2
                 nickname: "ssaunier",
                 city: "PARIS",
                 country: "FRANCE",
-                tagline: "Charming room in Montmartre"
+                tagline: "Charming room in Montmartre",
+                stars: 4,
                },
               {
                 name: "Boris'",
                 nickname: "papillard",
                 city: "TOKYO",
                 country: "JAPON",
-                tagline: "Small flat in Tokyo"
+                tagline: "Small flat in Tokyo",
+                stars: 3
                 },
               {
                 name: "Romain's",
                 nickname: "monsieurpaillard",
                 city: "LONDON",
                 country: "UK",
-                tagline: "Nice flat in Picadilly"
+                tagline: "Nice flat in Picadilly",
+                stars: 5
               }
           ] %>
 
           <% flats.each do |flat| %>
             <div class="col-xs-12 col-sm-4">
               <div class="card">
-                <a href="#">
-                  <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3)), url('https://kitt.lewagon.com/placeholder/cities/<%= flat[:city].downcase%>')">
+                  <div class="card-body" style="background-image:  linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 100%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat[:city].downcase%>')">
                     <div class="card-category"><%= flat[:city].upcase %>, <%= flat[:country].upcase %></div>
                     <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{flat[:nickname]}", class: "card-avatar" %>
                     <div class="card-desc">
                       <h4><%= flat[:name] %> home</h4>
                       <p><%= flat[:tagline] %></p>
+                      <ul class="list-inline">
+                        <% flat[:stars].times do %>
+                          <li><i class="fa fa-star yellow"></i></li>
+                        <% end %>
+                        <% (5-flat[:stars]).times do %>
+                          <li><i class="fa fa-star grey"></i></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                    <div class="card-link">
+                      <a href="#"></a>
                     </div>
                   </div>
-                </a>
               </div>
             </div>
 
