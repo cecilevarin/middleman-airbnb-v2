@@ -46,7 +46,7 @@ title: Middleman exo - Airbnb v2
                         <% end %>
                       </ul>
                     </div>
-                    <a href="./flats/<%=flat.nickname%>.html" class="card-link"></a>
+                    <%= link_to "", "/flats/#{flat.nickname}.html", class:"card-link"%>
                   </div>
               </div>
             </div>
