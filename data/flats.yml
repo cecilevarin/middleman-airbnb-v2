@@ -1,16 +1,19 @@
-- name: "Seb's"
+ssaunier:
+  name: "Seb's"
   nickname: "ssaunier"
   city: "PARIS"
   country: "FRANCE"
   tagline: "Charming room in Montmartre"
   stars: 4
-- name: "Boris'"
+papillard:
+  name: "Boris'"
   nickname: "papillard"
   city: "TOKYO"
   country: "JAPON"
   tagline: "Small flat in Tokyo"
   stars: 3
-- name: "Romain's"
+monsieurpaillard:
+  name: "Romain's"
   nickname: "monsieurpaillard"
   city: "LONDON"
   country: "UK"
