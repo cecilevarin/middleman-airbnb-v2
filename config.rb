@@ -21,6 +21,7 @@ activate :deploy do |deploy|
   deploy.deploy_method = :git
 end
 
+# This is to create dynamic page instead one show per user instead of only one show
 ["papillard", "ssaunier", "monsieurpaillard"].each do |name|
   proxy "/flats/#{name}.html", "/flats/show.html", locals: { owner: name }, ignore: true
 end

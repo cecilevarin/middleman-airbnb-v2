@@ -10,6 +10,7 @@ title: Flat page
     <div class="col-xs-12 col-sm-6">
       <div class="flat-summuary">
         <div class="user">
+          <!-- Vu que owner est la local passée dans le proxy configuré dans config.rb on peut faire owner instead of flat.nickname -->
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{flat.nickname}", class:"avatar-lg" %>
         <p><%= flat.nickname %></p>
         </div>
@@ -18,6 +19,7 @@ title: Flat page
           <h4><%= flat.city.capitalize %>, <%= flat.country.capitalize %></h4>
           <ul class="list-inline">
             <% flat.stars.times do %>
+            <%# binding.pry %>
               <li><i class="fa fa-star yellow"></i></li>
             <% end %>
             <% (5-flat.stars).times do %>
@@ -43,7 +45,7 @@ title: Flat page
             <option value = "">1 guest</option>
             <option value = "">2 guests</option>
             <option value = "">3 guests</option>
-           </select>
+          </select>
           <input type="submit" value= "Book it" class="btn btn-primary form-control">
         </form>
       </div>
